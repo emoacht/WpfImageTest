@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\test.jpg" />
+    <None Remove="Resources\sealion.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\test.jpg">
+    <Resource Include="Resources\sealion.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

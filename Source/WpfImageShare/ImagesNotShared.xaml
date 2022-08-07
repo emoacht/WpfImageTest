@@ -7,7 +7,7 @@
 			 mc:Ignorable="d"
 			 d:DesignWidth="1200" d:DesignHeight="400">
 	<UserControl.Resources>
-		<Image x:Key="ImageKey" Source="pack://application:,,,/Resources/test.jpg"
+		<Image x:Key="ImageKey" Source="pack://application:,,,/Resources/sealion.jpg"
 			   x:Shared="False"/>
 	</UserControl.Resources>
 	<StackPanel Orientation="Horizontal">
