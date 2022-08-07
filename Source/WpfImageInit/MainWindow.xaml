@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfImageInit.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="WPF Image Init"
+		Width="800" Height="500">
+	<Window.Resources>
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey"/>
+	</Window.Resources>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Button Grid.Column="0" Grid.Row="0"
+				Content="BitmapImage by BeginInit with OnLoad"
+				Click="Button1_Click"/>
+		<Button Grid.Column="1" Grid.Row="0"
+				Content="BitmapImage by Constructor with Uri"
+				Click="Button2_Click"/>
+
+		<Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+			<ListBox ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ImageSources}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel IsItemsHost="True"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Image MaxWidth="400" MaxHeight="400"
+							   Source="{Binding}"/>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ListBox>
+
+			<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+					   Text="Pausing" FontSize="20"
+					   Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=IsPausing, Converter={StaticResource BooleanToVisibilityConverterKey}}"/>
+		</Grid>
+	</Grid>
+</Window>
