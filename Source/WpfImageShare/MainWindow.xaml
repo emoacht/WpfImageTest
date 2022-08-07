@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfImageShare.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="WPF Image Share"
+		MinWidth="800" Height="420" SizeToContent="Width">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Button Grid.Column="0" Grid.Row="0"
+				Content="Images from shared BitmapImage"
+				Click="Button1_Click"/>
+		<Button Grid.Column="1" Grid.Row="0"
+				Content="Images not shared"
+				Click="Button2_Click"/>
+
+		<Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+			  x:Name="HostGrid"/>
+	</Grid>
+</Window>

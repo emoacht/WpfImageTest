@@ -11,11 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace WpfImageTest
+namespace WpfImageShare
 {
-	public partial class MainWindow : Window
+	public partial class ImagesNotShared : UserControl
 	{
-		public MainWindow()
+		public ImagesNotShared()
 		{
 			InitializeComponent();
 		}

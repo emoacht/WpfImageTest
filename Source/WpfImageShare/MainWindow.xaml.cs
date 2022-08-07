@@ -11,13 +11,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace WpfImageTest
+namespace WpfImageShare
 {
 	public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void Button1_Click(object sender, RoutedEventArgs e)
+		{
+			this.HostGrid.Children.Clear();
+			this.HostGrid.Children.Add(new ImagesFromSharedBitmapImage());
+		}
+
+		private void Button2_Click(object sender, RoutedEventArgs e)
+		{
+			this.HostGrid.Children.Clear();
+			this.HostGrid.Children.Add(new ImagesNotShared());
 		}
 	}
 }
