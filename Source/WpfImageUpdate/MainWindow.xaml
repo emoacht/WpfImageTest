@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfImageUpdate.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:WpfImageUpdate"
+		mc:Ignorable="d"
+		Title="WPF Image Update"
+		Width="800" Height="400">
+	<Window.Resources>
+		<Style x:Key="CaptionTextStyle" TargetType="{x:Type TextBlock}">
+			<Setter Property="Margin" Value="8"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Bottom"/>
+			<Setter Property="Foreground" Value="#CC000000"/>
+			<Setter Property="IsHitTestVisible" Value="False"/>
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+
+		<Canvas Grid.Column="0"
+				x:Name="canvas"
+				Background="LightGray">
+			<Ellipse Canvas.Left="0" Canvas.Top="0"
+					 x:Name="ball"
+					 Width="100" Height="100"
+					 Fill="Orange"
+					 MouseLeftButtonDown="Ball_MouseLeftButtonDown"
+					 MouseLeftButtonUp="Ball_MouseLeftButtonUp"
+					 MouseLeave="Ball_MouseLeave"
+					 MouseMove="Ball_MouseMove"/>
+		</Canvas>
+		<TextBlock Grid.Column="0"
+				   Style="{StaticResource CaptionTextStyle}"
+				   Text="Original"/>
+
+		<Image Grid.Column="1"
+			   x:Name="image"/>
+		<TextBlock Grid.Column="1"
+				   Style="{StaticResource CaptionTextStyle}"
+				   Text="Copy"/>
+	</Grid>
+</Window>
