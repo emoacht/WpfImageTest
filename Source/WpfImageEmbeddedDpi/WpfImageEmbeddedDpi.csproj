@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWPF>true</UseWPF>
+    <Authors>emoacht</Authors>
+    <Copyright>Copyright © 2022 emoacht</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\hien180.jpg" />
+    <None Remove="Resources\hien200.jpg" />
+    <None Remove="Resources\hien300.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\hien180.jpg" />
+    <Resource Include="Resources\hien200.jpg" />
+    <Resource Include="Resources\hien300.jpg" />
+  </ItemGroup>
+
+</Project>
